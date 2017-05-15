@@ -11,7 +11,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
     //res.send('hello world!');
-    res.render('index', {title:'Hello from render EJS',list:['vienas', 'du']});
+    res.render('index', {
+        title:'Hello from render EJS',
+        nav:[
+            {Link: '/Books', Text: 'Books'},
+            {Link: '/About', Text: 'Authors'}
+        ]
+    });
 });
 
 app.get('/books', function (req, res) {
