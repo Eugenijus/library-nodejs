@@ -26,7 +26,7 @@ var books = [
 bookRouter.route('/')
     .get(function (req, res) {
         /*looks for books.ejs */
-        res.render('books', {
+        res.render('bookListView', {
             title: 'Books',
             nav: [
                 {Link: '/Books', Text: 'Books'},
@@ -39,13 +39,13 @@ bookRouter.route('/')
 bookRouter.route('/:id')
     .get(function (req, res) {
         var id = req.params.id;
-        res.render('book', {
+        res.render('bookView', {
             title: 'Books',
             nav: [
                 {Link: '/Books', Text: 'Books'},
                 {Link: '/About', Text: 'Authors'}
             ],
-            boos: books[id];
+            book: books[id]
         });
     });
 
